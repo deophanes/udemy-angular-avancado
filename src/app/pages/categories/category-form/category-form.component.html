@@ -1,0 +1,63 @@
+<!--
+<nav class="mb-2">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+    <li class="breadcrumb-item active">Categorias</li>
+  </ol>
+</nav>
+-->
+
+<div class="row mb-2">
+  <div class="col-md">
+    <h2 class="h2 border-left pl-2">
+      <p class="text-secondary">Categorias - {{pageTitle}} </p>
+    </h2>
+  </div>
+  <div class="col-md">
+    <p-button [routerLink]="['/categories']" label="Voltar" icon="pi pi-undo"
+      styleClass="p-button-sm p-button-secondary float-right">
+    </p-button>
+  </div>
+</div>
+
+<form [formGroup]="resourceForm" (submit)="submitForm()">
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="name">Nome</label>
+      <input type="text" style="text-transform:uppercase" class="form-control" id="name" formControlName="name">
+      <div class="text-danger" *ngIf="resourceForm.get('name').invalid &&
+      resourceForm.get('name').touched">
+        <div *ngIf="resourceForm.get('name').errors.required">Dados Obrigatório</div>
+        <div *ngIf="resourceForm.get('name').errors.minlenght">Campo deve ter no mínimo 2 caracteres</div>
+      </div>
+    </div>
+    <div class="form-group col-md-8">
+      <label for="description">Descrição</label>
+      <input type="text" style="text-transform:uppercase" class="form-control" id="description"
+        formControlName="description">
+    </div>
+
+    <div class="col-md">
+
+      <div class="col-md" *ngIf='serveErrorMessages'>
+        <div class="alert alert-danger">
+          <strong>Erros do Servidos:</strong>
+          <ul>
+            <li *ngFor='let erro of serveErrorMessages'>{{erro}}</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <p-button label="Gravar" [disabled]="submittingForm || resourceForm.invalid" pRipple (onClick)="submitForm()"
+        icon="pi pi-save" styleClass="p-button-sm mr-2 p-button-success">
+      </p-button>
+      <!--
+      <p-button [routerLink]="['/categories']" label="Cancelar" icon="pi pi-ban"
+        styleClass="p-button-sm p-button-danger">
+      </p-button>
+      -->
+    </div>
+  </div>
+</form>

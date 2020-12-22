@@ -1,0 +1,50 @@
+<!--
+<nav class="mb-2">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+    <li class="breadcrumb-item active">Categorias</li>
+  </ol>
+</nav>
+  <fa-icon class="pl-2" [icon]="wrench" size="2x" ></fa-icon>
+
+-->
+
+<div class="row mb-2">
+  <div class="col-md float-left">
+    <h2 class="h2 border-left pl-2">
+      <p class="text-secondary">Categorias</p>
+    </h2>
+  </div>
+
+  <div class="col-md">
+    <button pButton type="button" label="Novo" icon="pi pi-plus"
+      [routerLink]="['new']"
+      class="p-button-sm float-right p-button-secondary">
+    </button>
+  </div>
+</div>
+
+<table class="table table-hover table-sm">
+  <thead>
+    <tr class="bg-info text-light">
+      <th>Categorias</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of categories">
+      <td>
+        <strong>{{category.name}}</strong> <br />
+        <small>{{category.description}}</small>
+      </td>
+      <td>
+        <p-button [routerLink]="[category.id + '/edit']" icon="pi pi-refresh"
+          styleClass="p-button-sm mr-2 p-button-warning">
+        </p-button>
+        <p-button (click)="deleteCategory(category)" icon="pi pi-trash" styleClass="p-button-sm p-button-danger">
+        </p-button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
