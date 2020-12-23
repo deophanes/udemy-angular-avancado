@@ -33,10 +33,10 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel>
   ) {
     this.activeRouter = this.injector.get(ActivatedRoute);
     this.router = this.injector.get(Router);
-    this.formBuilder = this.injector.get(this.formBuilder);
+    this.formBuilder = this.injector.get(FormBuilder);
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.setCurrentAction();
     this.buildResourceForm();
     this.loadResource();
