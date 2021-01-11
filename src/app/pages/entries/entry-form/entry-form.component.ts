@@ -6,6 +6,7 @@ import { EntryService } from '../shared/entry.service';
 import { Category } from '../../categories/shared/category.model';
 import { CategoryService } from '../../categories/shared/category.service';
 import { BaseResourceFormComponent } from '../../../shared/components/base-resource-form/base-resource-form.component';
+import { NotificationsService } from '../../../shared/services/notifications.service';
 
 @Component({
   selector: 'app-entry-form',
@@ -43,7 +44,8 @@ export class EntryFormComponent extends BaseResourceFormComponent<Entry> impleme
   constructor(
     protected entryService: EntryService,
     protected categoryService: CategoryService,
-    protected injector: Injector
+    protected injector: Injector,
+    protected notifyService: NotificationsService
   ) {
     super(injector, new Entry(), entryService, Entry.fromJson);
   }

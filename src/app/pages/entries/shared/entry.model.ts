@@ -14,6 +14,18 @@ export class Entry extends BaseResourceModel {
     public categoryId?: number,
     public category?: Category
 
+    /*public id?: number,
+    public mes?: string,
+    public ano?: string,
+    public dataVencimento?: string,
+    public valor?: string,
+    public situacao?: boolean,
+    public dataPagamento?: string,
+    public valorPago?: string,
+    public codBarras?: string,
+    public categoryId?: number,
+    public category?: Category
+    */
   ){ super(); }
 
   static types = {

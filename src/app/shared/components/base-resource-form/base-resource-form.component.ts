@@ -6,8 +6,8 @@ import { BaseResourceModel } from "../../models/base-resource.model"
 import { BaseResourceService } from "../../services/base-resource.service"
 
 import { switchMap } from 'rxjs/operators';
-import { NotificationsService } from '../../../shared/notifications.service';
 import { success, error } from 'toastr';
+import { NotificationsService } from '../../services/notifications.service';
 
 @Injectable()
 export abstract class BaseResourceFormComponent<T extends BaseResourceModel>
@@ -91,9 +91,6 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel>
       .subscribe(
         resource => this.actionsForSuccess(resource),
         error => this.actionsForErrors(error)
-
-        //next => this.actionsForSuccess(next),
-        //next => this.actionsForErrors(next)
       );
   }
 
@@ -108,11 +105,8 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel>
 
   protected actionsForSuccess(resource: T){
     this.notifyService.showMesagem('Solicitação processada com Sucesso!', success);
-    this.router.navigateByUrl('categories');
-    /*this.router.navigateByUrl('categories', {skipLocationChange:true)
-    .then(
-      () => this.router.navigate(['categories', category.id, 'edit'])
-    );*/
+    const path: string = this.activeRouter.snapshot.parent.url[0].path;
+    this.router.navigateByUrl(path);
   }
 
   protected actionsForErrors(errors) {
@@ -126,5 +120,4 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel>
   }
 
   protected abstract buildResourceForm(): void;
-
 }

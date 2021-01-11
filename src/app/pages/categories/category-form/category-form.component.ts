@@ -2,9 +2,9 @@ import { Component, Injector } from '@angular/core';
 
 import { Category } from '../shared/category.model';
 import { CategoryService } from '../shared/category.service';
-import { NotificationsService } from '../../../shared/notifications.service';
 import { BaseResourceFormComponent } from '../../../shared/components/base-resource-form/base-resource-form.component';
 import { Validators } from '@angular/forms';
+import { NotificationsService } from '../../../shared/services/notifications.service';
 
 @Component({
   selector: 'app-category-form',
