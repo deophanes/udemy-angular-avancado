@@ -8,9 +8,10 @@ import {CardModule} from 'primeng/card';
 import { ToastrModule } from 'ngx-toastr';
 import { CalendarModule } from 'primeng/calendar';
 import { IMaskModule } from 'angular-imask';
+import { PageHeaderComponent } from './components/page-header/page-header.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [PageHeaderComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -29,7 +30,8 @@ import { IMaskModule } from 'angular-imask';
     CardModule,
     ToastrModule,
     CalendarModule,
-    IMaskModule
+    IMaskModule,
+    PageHeaderComponent
   ]
 })
 export class SharedModule { }

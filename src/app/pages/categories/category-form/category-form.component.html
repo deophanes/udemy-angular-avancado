@@ -7,6 +7,7 @@
 </nav>
 -->
 
+<!--
 <div class="row mb-2">
   <div class="col-md">
     <h2 class="h2 border-left pl-2">
@@ -19,6 +20,15 @@
     </p-button>
   </div>
 </div>
+-->
+<app-page-header
+  page-model="Categorias - "
+  [page-title]="pageTitle"
+  button-text="Voltar"
+  button-link="/categories"
+  button-class="p-button-secondary"
+
+></app-page-header>
 
 <form [formGroup]="resourceForm" (submit)="submitForm()">
 
