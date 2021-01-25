@@ -11,8 +11,8 @@ const routes: Routes = [
                 then(mod => mod.CategoriesModule) },
 
   { path: 'entries',
-                loadChildren: () => import('./pages/entries/entries.module').
-                        then(mod => mod.EntriesModule) }
+        loadChildren: () => import('./pages/entries/entries.module').
+                then(mod => mod.EntriesModule) }
 ];
 
 @NgModule({

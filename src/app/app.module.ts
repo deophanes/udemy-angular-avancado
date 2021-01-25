@@ -1,5 +1,5 @@
 import { CoreModule } from './core/core.module';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -14,6 +14,9 @@ import { FooterComponent } from './core/footer/footer.component';
     CoreModule,
     AppRoutingModule
   ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+   ],
   providers: [],
   bootstrap: [AppComponent]
 })

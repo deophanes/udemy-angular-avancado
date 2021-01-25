@@ -17,14 +17,17 @@
   </div>
 
   <div class="col-md">
-    <button pButton type="button" label="Novo" icon="pi pi-plus"
-      [routerLink]="['new']"
+    <button pButton type="button" label="Novo" icon="pi pi-plus" [routerLink]="['new']"
       class="p-button-sm float-right p-button-secondary">
     </button>
   </div>
 </div>
 
-<table class="table table-hover table-sm">
+<div *ngIf="carregando">
+  <p-progressSpinner></p-progressSpinner>
+</div>
+
+<table *ngIf="!carregando" class="table table-hover table-sm">
   <thead>
     <tr class="bg-info text-light">
       <th>Tipo</th>

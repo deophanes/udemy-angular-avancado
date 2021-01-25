@@ -8,6 +8,7 @@ import { NotificationsService } from '../../services/notifications.service';
 @Injectable()
 export abstract class BaseResourceListComponent<T extends BaseResourceModel> implements OnInit {
 
+  carregando = false;
   resources: T[] = [];
   private router: Router;
   protected notifyService: NotificationsService;
@@ -15,10 +16,15 @@ export abstract class BaseResourceListComponent<T extends BaseResourceModel> imp
   constructor(private resourceService: BaseResourceService<T> ) { }
 
   ngOnInit() {
+    console.log('passo 2')
+    this.carregando = true;
     this.resourceService.findAll().subscribe(
-      resources => this.resources = resources.sort( (a, b) => b.id - a.id ),
+      resources =>
+        this.resources = resources.sort( (a, b) => b.id - a.id ),
       erro => alert('Erro ao Carregar lsita')
     );
+    console.log('passo 3')
+    this.carregando = false;
   }
 
   deleteResource(resource: T){

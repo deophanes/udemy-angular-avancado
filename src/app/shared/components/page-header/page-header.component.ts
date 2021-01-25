@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-header',
@@ -11,12 +12,14 @@ export class PageHeaderComponent implements OnInit {
   @Input('page-title') pageTitle: string;
   @Input('button-class') buttonClass: string;
   @Input('button-text') buttonText: string;
-  @Input('button-link') buttonLink: string;
 
+  constructor(private router: Router) { }
 
-  constructor() { }
+  ngOnInit() {
+  }
 
-  ngOnInit(): void {
+  voltar() {
+    return this.router.navigateByUrl('/categories');
   }
 
 }

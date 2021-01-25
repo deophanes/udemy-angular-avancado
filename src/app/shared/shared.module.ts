@@ -8,6 +8,7 @@ import {CardModule} from 'primeng/card';
 import { ToastrModule } from 'ngx-toastr';
 import { CalendarModule } from 'primeng/calendar';
 import { IMaskModule } from 'angular-imask';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 
 @NgModule({
@@ -20,7 +21,8 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
     CardModule,
     ToastrModule,
     CalendarModule,
-    IMaskModule
+    IMaskModule,
+    ProgressSpinnerModule
   ],
   exports: [
     CommonModule,
@@ -31,6 +33,7 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
     ToastrModule,
     CalendarModule,
     IMaskModule,
+    ProgressSpinnerModule,
     PageHeaderComponent
   ]
 })

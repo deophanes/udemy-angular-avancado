@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { SharedModule } from './../../shared/shared.module';
 
 import { CategoriesRoutingModule } from './categories-routing.module';
@@ -13,6 +13,10 @@ import { CategoryListComponent } from './category-list/category-list.component';
   imports: [
     SharedModule,
     CategoriesRoutingModule
-  ]
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
+   ]
 })
 export class CategoriesModule { }
