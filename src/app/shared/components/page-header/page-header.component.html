@@ -4,11 +4,12 @@
       <p class="text-secondary"> {{pageModel}} {{pageTitle}} </p>
     </h2>
   </div>
+
   <div class="col-md-3">
-    <p-button (onClick)='voltar()'
-              icon='pi pi-undo'
-              label='{{buttonText}}'
-              styleClass='{{buttonClass}}'>
+    <p-button label='{{buttonText}}'
+              (onClick)='processar(buttonLink)'
+              styleClass='{{buttonClass}}'
+              icon= '{{buttonIcon}}'>
     </p-button>
   </div>
 </div>

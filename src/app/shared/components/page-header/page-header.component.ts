@@ -12,14 +12,15 @@ export class PageHeaderComponent implements OnInit {
   @Input('page-title') pageTitle: string;
   @Input('button-class') buttonClass: string;
   @Input('button-text') buttonText: string;
+  @Input('button-link') buttonLink: string;
+  @Input('button-icon') buttonIcon: string;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  voltar() {
-    return this.router.navigateByUrl('/categories');
+  processar(tipo: string) {
+    return this.router.navigateByUrl(tipo);
   }
-
 }

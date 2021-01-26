@@ -9,6 +9,7 @@
 
 -->
 
+<!--
 <div class="row mb-2">
   <div class="col-md float-left">
     <h2 class="h2 border-left pl-2">
@@ -22,6 +23,16 @@
     </button>
   </div>
 </div>
+-->
+
+<app-page-header page-model='Categorias'
+                [page-title]=''
+                button-text='Novo'
+                button-link="categories/new"
+                button-icon='pi pi-plus'
+                button-class='p-button-sm p-button-secondary float-right'>
+</app-page-header>
+
 
 <div *ngIf="carregando">
   <p-progressSpinner></p-progressSpinner>

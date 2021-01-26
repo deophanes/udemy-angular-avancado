@@ -21,14 +21,13 @@
   </div>
 </div>
 -->
-<app-page-header
-  page-model='Categorias - '
-  [page-title]='pageTitle'
-  button-text='Voltar'
-  button-link="['/categories']"
-  button-class='p-button-sm p-button-secondary float-right'
-
-></app-page-header>
+<app-page-header page-model='Categorias - '
+                [page-title]='pageTitle'
+                button-text='Voltar'
+                button-link="/categories"
+                button-icon='pi pi-undo'
+                button-class='p-button-sm p-button-secondary float-right'>
+</app-page-header>
 
 <form [formGroup]="resourceForm" (submit)="submitForm()">
 
