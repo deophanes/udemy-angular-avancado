@@ -10,9 +10,10 @@ import { CalendarModule } from 'primeng/calendar';
 import { IMaskModule } from 'angular-imask';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
+import { FormFieldErrorComponent } from './components/form-field-error/form-field-error.component';
 
 @NgModule({
-  declarations: [PageHeaderComponent],
+  declarations: [PageHeaderComponent, FormFieldErrorComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -34,7 +35,8 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
     CalendarModule,
     IMaskModule,
     ProgressSpinnerModule,
-    PageHeaderComponent
+    PageHeaderComponent,
+    FormFieldErrorComponent
   ]
 })
 export class SharedModule { }
