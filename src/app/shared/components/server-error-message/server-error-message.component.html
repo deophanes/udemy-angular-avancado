@@ -1,0 +1,13 @@
+<div class="col-md" *ngIf='serveErrorMessages'>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Erros do Servidos:</strong>
+    <ul>
+      <li *ngFor='let erro of serveErrorMessages'>{{erro}}</li>
+    </ul>
+
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+  </div>
+</div>

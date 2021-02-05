@@ -11,9 +11,13 @@ import { IMaskModule } from 'angular-imask';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 import { FormFieldErrorComponent } from './components/form-field-error/form-field-error.component';
+import { ServerErrorMessageComponent } from './components/server-error-message/server-error-message.component';
 
 @NgModule({
-  declarations: [PageHeaderComponent, FormFieldErrorComponent],
+  declarations: [
+    PageHeaderComponent,
+    FormFieldErrorComponent,
+    ServerErrorMessageComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -36,7 +40,8 @@ import { FormFieldErrorComponent } from './components/form-field-error/form-fiel
     IMaskModule,
     ProgressSpinnerModule,
     PageHeaderComponent,
-    FormFieldErrorComponent
+    FormFieldErrorComponent,
+    ServerErrorMessageComponent
   ]
 })
 export class SharedModule { }

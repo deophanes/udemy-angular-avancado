@@ -21,7 +21,7 @@ export class FormFieldErrorComponent implements OnInit {
 
   public get errorMessage(): string | null {
     if ( this.mustShowErrorMessage() )
-      return 'msg'
+      return this.getErrorMessage();
     else
       return null
   }
@@ -30,13 +30,15 @@ export class FormFieldErrorComponent implements OnInit {
     return this.formControl.invalid && this.formControl.touched
   }
 
-  private geterrorMessage(): String | null {
-    if (this.formControl.errors.required)
-      return 'Dados Obrigátorios'
-    else if (this.formControl.errors.email)
-    return 'Formato de e-mail Inválido.'
+  private getErrorMessage(): string | null {
 
-      else if (this.formControl.errors.minlenght) {
+    if (this.formControl.errors.required)
+      return 'Campo Obrigátorio'
+
+      else if (this.formControl.errors.email)
+      return 'Formato de e-mail Inválido.'
+
+    else if (this.formControl.errors.minlenght) {
       const requiredLenght = this.formControl.errors.minlenght.requiredLength;
       return `Campo deve ter no Mínimo ${requiredLenght} Caracteres`
     }

@@ -20,12 +20,8 @@
   </div>
 </div>
 -->
-<app-page-header page-model='Lançamentos - '
-                [page-title]='pageTitle'
-                button-text='Voltar'
-                button-link="/entries"
-                button-icon='pi pi-undo'
-                button-class='p-button-sm p-button-secondary float-right'>
+<app-page-header page-model='Lançamentos - ' [page-title]='pageTitle' button-text='Voltar' button-link="/entries"
+  button-icon='pi pi-undo' button-class='p-button-sm p-button-secondary float-right'>
 </app-page-header>
 
 
@@ -112,17 +108,8 @@
         formControlName="description">
     </div>
   </div>
+
   <div class="form-row">
-    <div class="col-md" *ngIf='serveErrorMessages'>
-      <div class="alert alert-danger">
-        <strong>Erros do Servidos:</strong>
-        <ul>
-          <li *ngFor='let erro of serveErrorMessages'>{{erro}}</li>
-        </ul>
-      </div>
-    </div>
-
-
     <p-button label="Gravar" [disabled]="submittingForm || resourceForm.invalid" pRipple (onClick)="submitForm()"
       icon="pi pi-save" styleClass="p-button-sm mr-2 p-button-success">
     </p-button>
@@ -131,6 +118,7 @@
         [routerLink]="['/entries']" label="Cancelar" icon="pi pi-ban" styleClass="p-button-sm p-button-danger">
       </p-button>
       -->
+    <app-server-error-message [server-error]='serveErrorMessages'></app-server-error-message>
 
   </div>
 </form>

@@ -32,31 +32,27 @@
       <label for="name">Tipo</label>
       <input type="text" style="text-transform:uppercase" class="form-control" id="name" formControlName="name">
 
-      <div class="text-danger" *ngIf="resourceForm.get('name').invalid &&
-      resourceForm.get('name').touched">
+      <app-form-field-error [form-control]="resourceForm.get('name')" ></app-form-field-error>
+
+      <!--
+      <div class="text-danger" *ngIf="resourceForm.get('name').invalid && resourceForm.get('name').touched">
         <div *ngIf="resourceForm.get('name').errors.required">Dados Obrigatório</div>
         <div *ngIf="resourceForm.get('name').errors.minlenght">Campo deve ter no mínimo 2 caracteres</div>
       </div>
       <pre> {{ resourceForm.get('name').errors | json }} </pre>
+      -->
 
     </div>
     <div class="form-group col-md-8">
       <label for="description">Categoria</label>
       <input type="text" style="text-transform:uppercase" class="form-control" id="description"
         formControlName="description">
+        <app-form-field-error [form-control]="resourceForm.get('description')" ></app-form-field-error>
     </div>
 
     <div class="col-md">
 
-      <div class="col-md" *ngIf='serveErrorMessages'>
-        <div class="alert alert-danger">
-          <strong>Erros do Servidos:</strong>
-          <ul>
-            <li *ngFor='let erro of serveErrorMessages'>{{erro}}</li>
-          </ul>
-        </div>
-      </div>
-
+      <app-server-error-message [server-error]='serveErrorMessages'></app-server-error-message>
 
       <p-button label="Gravar" [disabled]="submittingForm || resourceForm.invalid" pRipple (onClick)="submitForm()"
         icon="pi pi-save" styleClass="p-button-sm mr-2 p-button-success">
