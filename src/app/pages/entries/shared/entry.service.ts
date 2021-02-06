@@ -26,14 +26,14 @@ export class EntryService extends BaseResourceService<Entry> {
     return this.setCategoryAndSendToServer(entry, super.update.bind(this))
   }
 
-private setCategoryAndSendToServer(entry: Entry, sendFn: any): Observable<Entry>{
-  return this.categoryService.findById(entry.categoryId).pipe(
-    flatMap(category => {
-      entry.category = category;
-      return sendFn(entry);
-    }),
-    catchError(this.handleError)
-  );
-}
+  private setCategoryAndSendToServer(entry: Entry, sendFn: any): Observable<Entry>{
+    return this.categoryService.findById(entry.categoryId).pipe(
+      flatMap(category => {
+        entry.category = category;
+        return sendFn(entry);
+      }),
+      catchError(this.handleError)
+    );
+  }
 
 }
