@@ -118,8 +118,12 @@
         [routerLink]="['/entries']" label="Cancelar" icon="pi pi-ban" styleClass="p-button-sm p-button-danger">
       </p-button>
       -->
-    <app-server-error-message [server-error]='serveErrorMessages'></app-server-error-message>
+  </div>
 
+  <div class="form-row">
+    <div class="form-group">
+      <app-server-error-message [server-error]='serveErrorMessages'></app-server-error-message>
+    </div>
   </div>
 </form>
 
