@@ -74,11 +74,9 @@
         <div *ngIf="resourceForm.get('date').errors.required">Dados Obrigatório</div>
       </div>
     </div>
-
   </div>
 
   <div class="form-row">
-
     <div class="form-group col-md-2">
       <label for="paid">Pago</label>
       <div class="btn-group">
@@ -120,13 +118,9 @@
       -->
   </div>
 
-  <div class="form-row">
-    <div class="form-group">
-      <app-server-error-message [server-error]='serveErrorMessages'></app-server-error-message>
-    </div>
-  </div>
+  <br>
+  <app-server-error-message [server-error]='serveErrorMessages'></app-server-error-message>
 </form>
-
 <!--
 <pre>
   {{resourceForm.value | json}}

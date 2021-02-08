@@ -8,7 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InMemoryDatabase } from './../in-memory-database';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
-
 @NgModule({
   declarations: [],
   imports: [
