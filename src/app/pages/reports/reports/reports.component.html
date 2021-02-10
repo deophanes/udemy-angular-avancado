@@ -1,4 +1,7 @@
-<app-page-header page-title="Relatorio de Receitas e Despesas">
+
+<app-page-header
+  page-title="Relatorio de Receitas e Despesas">
+
 </app-page-header>
 
 
@@ -43,7 +46,7 @@
 
     <div class="form-row">
       <div class="col-md text-right">
-        <button type="button" class="btn btn-info">
+        <button type="button" class="btn btn-info" (click)="generateReports()">
           Gerar Relatórios
         </button>
       </div>
@@ -53,19 +56,19 @@
   <hr>
 
   <div class="card-deck mt-2 mb-4">
-    <div class="card text-center text-white bg-success">
+    <div class="card text-center text-white bg-success shadow-lg">
       <div class="card-header">
         <i class="pi pi-plus-circle"></i>
         TOTAL DE RECEITAS
       </div>
-      <div class="card-body">
+      <div class="card-body ">
         <h3 class="card-title">
           R$ 1.500,00
         </h3>
       </div>
     </div>
 
-    <div class="card text-center text-white bg-danger">
+    <div class="card text-center text-white bg-danger shadow-lg">
       <div class="card-header">
         <i class="pi pi-minus-circle"></i>
         TOTAL DE DESPESAS
@@ -77,7 +80,7 @@
       </div>
     </div>
 
-    <div class="card text-center text-white bg-info">
+    <div class="card text-center text-white bg-info shadow-lg">
       <div class="card-header">
         <i class="pi pi-info-circle"></i>
         SALDO
@@ -89,4 +92,6 @@
       </div>
     </div>
   </div>
+
+
 </div>

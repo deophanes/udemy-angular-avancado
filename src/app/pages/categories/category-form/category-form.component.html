@@ -47,7 +47,9 @@
       <label for="description">Categoria</label>
       <input type="text" style="text-transform:uppercase" class="form-control" id="description"
         formControlName="description">
-        <app-form-field-error [form-control]="resourceForm.get('description')" ></app-form-field-error>
+        <app-form-field-error [form-control]="resourceForm.get('description')">
+
+        </app-form-field-error>
     </div>
 
     <div class="col-md">

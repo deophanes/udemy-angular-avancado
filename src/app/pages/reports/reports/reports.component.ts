@@ -12,4 +12,7 @@ export class ReportsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  generateReports() {
+    alert('Você precisa selecionar o Mês e o Ano para gerar os relatórios')
+  }
 }
