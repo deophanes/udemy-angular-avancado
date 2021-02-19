@@ -1,6 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CategoryService } from '../../categories/shared/category.service';
 import { EntryService } from '../../entries/shared/entry.service';
+import { Entry } from '../../entries/shared/entry.model';
+import { Category } from '../../categories/shared/category.model';
+
+//import currencyFormatter from 'currencyFormatter';
 
 @Component({
   selector: 'app-reports',
@@ -19,12 +23,16 @@ export class ReportsComponent implements OnInit {
   @ViewChild('month' , { static : false}) month: ElementRef = null;
   @ViewChild('year', { static : false}) year: ElementRef = null;
 
+  categories: Category[] = []
+  entries: Entry[] = []
+
   constructor(private entryService: EntryService, private categoryService: CategoryService) { }
 
   ngOnInit(): void {
   }
 
   generateReports() {
+
     const month = this.month.nativeElement.value;
     const year = this.year.nativeElement.value;
 
@@ -32,5 +40,49 @@ export class ReportsComponent implements OnInit {
       alert('Você precisa selecionar o Mês e o Ano para gerar os relatórios')
     else
       this.entryService.getByFilter(month, year).subscribe(this.setValues.bind(this))
+  }
+
+  private setValues(entries: Entry[]) {
+    this.entries = entries;
+    this.calculateBalance();
+    //this.setChartData();
+  }
+
+  private calculateBalance() {
+    let expenseTotal = 0;
+    let revenueTotal = 0;
+
+    this.entries.forEach(entry => {
+      if (entry.type == 'revenue') {
+        revenueTotal += Number( new Intl.NumberFormat(
+                                                'en-US',
+                                                { style: 'currency', currency: 'USD' }
+                                  ).format(Number( entry.amount ) )
+                        );
+      } else {
+        expenseTotal += Number( new Intl.NumberFormat(
+                                                'en-US',
+                                                { style: 'currency', currency: 'USD' }
+                                  ).format(Number( entry.amount) )
+                        );
+      }
+    })
+
+    this.expenseTotal = new Intl.NumberFormat('BRL', { style: 'currency', currency: 'BRL' }).format(expenseTotal);
+    this.revenueTotal = new Intl.NumberFormat('BRL', { style: 'currency', currency: 'BRL' }).format(revenueTotal);
+    this.balance = new Intl.NumberFormat('BRL', { style: 'currency', currency: 'BRL' }).format(expenseTotal - revenueTotal);
+
+
+    /*this.entries.forEach(entry => {
+      if (entry.type == 'revenue')
+        revenueTotal += currencyFormatter.unformat(entry.amount, { code: 'BRL'} )
+      else
+        expenseTotal += currencyFormatter.unformat(entry.amount, { code: 'BRL'} )
+    })
+
+    this.expenseTotal = currencyFormatter.format(expenseTotal, { code : 'BRL'} )
+    this.revenueTotal = currencyFormatter.format(revenueTotal, { code : 'BRL'} )
+    this.balance = currencyFormatter.format(expenseTotal - revenueTotal, { code : 'BRL'} )
+    */
   }
 }

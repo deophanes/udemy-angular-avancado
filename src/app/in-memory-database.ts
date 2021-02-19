@@ -4,21 +4,22 @@ import { Entry } from './pages/entries/shared/entry.model';
 
 
 export class InMemoryDatabase implements InMemoryDbService {
+  /* tslint:disable:typedef */
   createDb() {
     const categories: Category[]  =
       [
         // Receitas
-        {id : 1, description: 'SALARIO', name: 'RECEITA'},
-        {id : 2, description: 'RESTITUICAO IR', name: 'RECEITA'},
-        {id : 3, description: 'TRANSFERENCIAS', name: 'RECEITA'},
+        {id :  1, description: 'SALARIO', name: 'RECEITA'},
+        {id :  2, description: 'RESTITUICAO IR', name: 'RECEITA'},
+        {id :  3, description: 'TRANSFERENCIAS', name: 'RECEITA'},
 
         // Despesas
-        {id : 4, description: 'PRESTACAO APTO', name: 'DESPESA'},
-        {id : 5, description: 'CELPE', name: 'DESPESA'},
-        {id : 6, description: 'ALIMENTACAO', name: 'DESPESA'},
-        {id : 7, description: 'RECARGA PRE PAGO', name: 'DESPESA'},
-        {id : 8, description: 'TRANSPORTES/DIVERSOS', name: 'DESPESA'},
-        {id : 9, description: 'JUROS CHEQUE ESPECIAL', name: 'DESPESA'},
+        {id :  4, description: 'PRESTACAO APTO', name: 'DESPESA'},
+        {id :  5, description: 'CELPE', name: 'DESPESA'},
+        {id :  6, description: 'ALIMENTACAO', name: 'DESPESA'},
+        {id :  7, description: 'RECARGA PRE PAGO', name: 'DESPESA'},
+        {id :  8, description: 'TRANSPORTES/DIVERSOS', name: 'DESPESA'},
+        {id :  9, description: 'JUROS CHEQUE ESPECIAL', name: 'DESPESA'},
         {id : 10, description: 'SEGURO AUTO', name: 'DESPESA'},
         {id : 11, description: 'NET HDTV', name: 'DESPESA'},
         {id : 12, description: 'RIACHUELO', name: 'DESPESA'},
@@ -78,7 +79,7 @@ export class InMemoryDatabase implements InMemoryDbService {
         } as Entry
 
 
-      ]
+      ];
 
     return { categories, entries };
   }

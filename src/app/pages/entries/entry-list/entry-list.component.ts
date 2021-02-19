@@ -11,6 +11,6 @@ import { BaseResourceListComponent } from '../../../shared/components/base-resou
 export class EntryListComponent extends BaseResourceListComponent<Entry>  {
 
   constructor(private entryService: EntryService ) {
-    super(entryService)
+    super(entryService);
    }
 }
