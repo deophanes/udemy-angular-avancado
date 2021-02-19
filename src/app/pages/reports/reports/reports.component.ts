@@ -53,18 +53,15 @@ export class ReportsComponent implements OnInit {
     let revenueTotal = 0;
 
     this.entries.forEach(entry => {
-      if (entry.type == 'revenue') {
+      if (entry.type == 'revenue')
         revenueTotal += parseFloat( entry.amount )
-        console.log('revenueTotal: ' + revenueTotal)
-      } else {
+      else
         expenseTotal += parseFloat( entry.amount );
-        console.log('expenseTotal: ' + expenseTotal)
-      }
     })
 
     this.expenseTotal = new Intl.NumberFormat('BRL', { style: 'currency', currency: 'BRL' }).format(expenseTotal);
     this.revenueTotal = new Intl.NumberFormat('BRL', { style: 'currency', currency: 'BRL' }).format(revenueTotal);
-    this.balance = new Intl.NumberFormat('BRL', { style: 'currency', currency: 'BRL' }).format(expenseTotal - revenueTotal);
+    this.balance = new Intl.NumberFormat('BRL', { style: 'currency', currency: 'BRL' }).format(revenueTotal - expenseTotal);
 
 
     /*this.entries.forEach(entry => {
