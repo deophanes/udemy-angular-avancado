@@ -62,7 +62,7 @@ export class ReportsComponent implements OnInit {
     this.expenseTotal = new Intl.NumberFormat('BRL', { style: 'currency', currency: 'BRL' }).format(expenseTotal);
     this.revenueTotal = new Intl.NumberFormat('BRL', { style: 'currency', currency: 'BRL' }).format(revenueTotal);
     this.balance = new Intl.NumberFormat('BRL', { style: 'currency', currency: 'BRL' }).format(revenueTotal - expenseTotal);
-
+    console.log('push')
 
     /*this.entries.forEach(entry => {
       if (entry.type == 'revenue')
