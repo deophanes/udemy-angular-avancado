@@ -1,7 +1,4 @@
-
-<app-page-header
-  [show-button]='false'
-  page-title="Relatorio de Receitas e Despesas">
+<app-page-header [show-button]='false' page-title="Relatorio de Receitas e Despesas">
 
 </app-page-header>
 
@@ -49,6 +46,7 @@
     <div class="form-row">
       <div class="col-md text-right">
         <button type="button" class="btn btn-info" (click)="generateReports()">
+          <i class="pi pi-print"></i>
           Gerar Relatórios
         </button>
       </div>
@@ -60,36 +58,54 @@
   <div class="card-deck mt-2 mb-4">
     <div class="card text-center text-white bg-success shadow-lg">
       <div class="card-header">
-        <i class="pi pi-plus-circle"></i>
         TOTAL DE RECEITAS
       </div>
       <div class="card-body ">
         <h3 class="card-title">
-          {{ revenueTotal }}
+          <div class="row mb-2">
+            <div class="col-md-2">
+              <i class="pi pi-plus-circle" style="font-size: 3rem"></i>
+            </div>
+            <div class="col-md">
+              {{ revenueTotal }}
+            </div>
+          </div>
         </h3>
       </div>
     </div>
 
     <div class="card text-center text-white bg-danger shadow-lg">
       <div class="card-header">
-        <i class="pi pi-minus-circle"></i>
         TOTAL DE DESPESAS
       </div>
       <div class="card-body">
         <h3 class="card-title">
-          {{ expenseTotal }}
+          <div class="row mb-2">
+            <div class="col-md-2">
+              <i class="pi pi-minus-circle" style="font-size: 3rem"></i>
+            </div>
+            <div class="col-md">
+              {{ expenseTotal }}
+            </div>
+          </div>
         </h3>
       </div>
     </div>
 
     <div class="card text-center text-white bg-warning shadow-lg">
       <div class="card-header">
-        <i class="pi pi-info-circle"></i>
         SALDO
       </div>
       <div class="card-body">
         <h3 class="card-title">
-          {{ balance }}
+          <div class="row mb-2">
+            <div class="col-md-2">
+              <i class="pi pi-bars" style="font-size: 3rem"></i>
+            </div>
+            <div class="col-md">
+              {{ balance }}
+            </div>
+          </div>
         </h3>
       </div>
     </div>
